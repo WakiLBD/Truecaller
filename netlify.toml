@@ -1,0 +1,16 @@
+[build]
+  # এটি Netlify-কে বলে দেয় ফাংশনগুলো কোন ফোল্ডারে আছে
+  functions = "functions"
+  # এটি আপনার ফ্রন্টেন্ড ফাইলগুলোর লোকেশন (মেইন ডিরেক্টরি)
+  publish = "."
+
+[[redirects]]
+  # এটি আপনার API কলগুলোকে সহজ করে দেয়
+  # ব্রাউজারে /api/lookup লিখলে এটি অটোমেটিক /.netlify/functions/lookup এ চলে যাবে
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+[functions]
+  # এখানে আপনার ফাংশনের জন্য প্রয়োজনীয় ডিপেন্ডেন্সি সেট করা থাকে
+  node_bundle = true
